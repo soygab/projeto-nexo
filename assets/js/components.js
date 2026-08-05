@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>['navbar','header','footer'].forEach(async n=>{const e=document.getElementById(n+'-component');if(e){try{e.innerHTML=await (await fetch('components/'+n+'.html')).text()}catch{}}}));
