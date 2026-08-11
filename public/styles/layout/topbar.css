@@ -1,0 +1,10 @@
+.topbar{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:60px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:50}
+.topbar-title{font-family:var(--font-display);font-size:16px;font-weight:700}
+.search-bar{flex:1;max-width:500px;position:relative}
+.search-bar input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:8px 14px 8px 36px;color:var(--text);outline:none;font-size:13px;transition:border .2s}
+.search-bar input:focus{border-color:var(--orange)}
+.search-bar .search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:16px}
+.topbar-actions{display:flex;align-items:center;gap:8px;margin-left:auto}
+.icon-btn{width:36px;height:36px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:var(--text2);cursor:pointer;transition:all .2s;position:relative;background:transparent;border:1px solid var(--border)}
+.icon-btn:hover{background:var(--surface2);color:var(--text)}
+.icon-btn .dot{position:absolute;top:6px;right:6px;width:7px;height:7px;background:var(--orange);border-radius:50%;border:2px solid var(--bg2)}

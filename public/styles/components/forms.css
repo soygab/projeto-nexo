@@ -1,0 +1,5 @@
+.form-group{margin-bottom:16px}
+.form-label{display:block;font-size:12px;font-weight:500;color:var(--text2);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px}
+.form-input{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px;color:var(--text);outline:none;transition:border .2s}
+.form-input:focus{border-color:var(--orange)}
+.form-input::placeholder{color:var(--text3)}

@@ -1,0 +1,4 @@
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.feed-layout{display:grid;grid-template-columns:1fr 300px;gap:20px;align-items:start}

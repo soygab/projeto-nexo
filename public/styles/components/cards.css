@@ -1,0 +1,22 @@
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.card-header{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.card-body{padding:20px}
+.card-title{font-size:14px;font-weight:600;color:var(--text)}
+.post-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:16px;overflow:hidden;transition:border-color .2s}
+.post-card:hover{border-color:var(--border2)}
+.widget{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px;margin-bottom:16px}
+.widget-title{font-size:12px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px}
+.mini-project{display:flex;align-items:center;gap:10px;padding:8px 0;cursor:pointer}
+.mini-project-icon{width:36px;height:36px;border-radius:var(--radius);background:var(--orange-light);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mini-project-icon i{color:var(--orange);font-size:16px}
+.proj-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;transition:all .2s}
+.proj-card:hover{border-color:var(--orange);transform:translateY(-2px)}
+.proj-card-header{padding:16px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.proj-card-body{padding:14px 16px}
+.proj-card-footer{padding:10px 16px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.proj-icon{width:40px;height:40px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.proj-name{font-size:14px;font-weight:600;color:var(--text)}
+.proj-desc{font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:10px}
+.proj-stat{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--text3)}
+.progress-bar{height:4px;background:var(--border);border-radius:2px;overflow:hidden;margin:8px 0}
+.progress-fill{height:100%;background:var(--orange);border-radius:2px;transition:width .3s}

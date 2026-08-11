@@ -1,0 +1,9 @@
+@media (max-width:768px){
+  .sidebar{transform:translateX(-100%)}
+  .sidebar.open{transform:none}
+  .main-content{margin-left:0}
+  .feed-layout{grid-template-columns:1fr}
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+  .mobile-frame{border-radius:0;border:none;box-shadow:none;width:100%}
+}
+

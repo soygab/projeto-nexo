@@ -1,0 +1,8 @@
+.timeline{position:relative;padding-left:24px}
+.timeline::before{content:"";position:absolute;left:7px;top:0;bottom:0;width:2px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:20px}
+.tl-dot{position:absolute;left:-24px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--orange);border:2px solid var(--bg2)}
+.tl-dot.done{background:var(--green)}
+.tl-dot.pending{background:var(--surface2);border-color:var(--border2)}
+.tl-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px}
+.tl-meta{font-size:11px;color:var(--text3)}

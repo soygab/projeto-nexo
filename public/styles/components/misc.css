@@ -1,0 +1,66 @@
+.post-header{padding:16px 20px 12px;display:flex;align-items:flex-start;gap:12px}
+.post-meta{flex:1}
+.post-author{font-size:13px;font-weight:600;color:var(--text)}
+.post-author span{color:var(--orange);font-size:12px;margin-left:4px}
+.post-time{font-size:11px;color:var(--text3)}
+.post-body{padding:0 20px 14px}
+.post-body p{color:var(--text2);line-height:1.7;font-size:13px;margin-bottom:10px}
+.post-title{font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px}
+.post-image{width:100%;height:180px;background:var(--bg3);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;margin-bottom:12px;overflow:hidden;position:relative}
+.post-image-placeholder{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text3)}
+.post-image-placeholder i{font-size:32px}
+.post-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.post-actions{padding:10px 20px;border-top:1px solid var(--border);display:flex;align-items:center;gap:4px}
+.post-action-btn{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:var(--radius);color:var(--text3);font-size:12px;cursor:pointer;transition:all .2s;background:transparent;border:none}
+.post-action-btn:hover{background:var(--surface2);color:var(--text2)}
+.post-action-btn.liked{color:#f43f5e}
+.post-action-btn.starred{color:#f59e0b}
+.trend-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);cursor:pointer}
+.trend-item:last-child{border:none}
+.trend-num{font-size:11px;color:var(--text3);width:16px;text-align:center}
+.trend-info{flex:1}
+.trend-tag{font-size:12px;font-weight:600;color:var(--orange)}
+.trend-count{font-size:11px;color:var(--text3)}
+.mini-title{font-size:12px;font-weight:600;color:var(--text)}
+.mini-meta{font-size:11px;color:var(--text3)}
+.stat-num{font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--text)}
+.stat-label{font-size:11px;color:var(--text3)}
+.msg{display:flex;gap:10px;max-width:70%}
+.msg.me{flex-direction:row-reverse;align-self:flex-end}
+.msg-bubble{background:var(--surface2);padding:10px 14px;border-radius:12px;font-size:13px;color:var(--text)}
+.msg.me .msg-bubble{background:var(--orange);color:#fff}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);width:560px;max-width:100%;max-height:90vh;overflow-y:auto}
+.empty-state{display:flex;flex-direction:column;align-items:center;gap:12px;padding:48px 20px;color:var(--text3);text-align:center}
+.empty-state i{font-size:48px;opacity:0.4}
+to{opacity:1;transform:none}}
+
+/* Styles extracted from modals.html */
+.post-tabs{margin-bottom:16px}
+.post-description{resize:vertical}
+.post-fields{gap:12px;margin-bottom:16px}
+.post-field{margin:0}
+.attachment-dropzone{border:2px dashed var(--border);border-radius:var(--radius);padding:24px;text-align:center;color:var(--text3);cursor:pointer;transition:border-color .2s}
+.attachment-icon{font-size:28px;display:block;margin-bottom:8px}
+.attachment-help{font-size:12px}
+.post-submit{width:auto}
+.notifications-modal{width:400px}
+.notification-list{max-height:400px;overflow-y:auto}
+.notification-avatar{width:28px;height:28px;font-size:10px;flex-shrink:0}
+.notification-avatar--blue{background:linear-gradient(135deg,#3b82f6,#1d4ed8)}
+.notification-avatar--purple{background:linear-gradient(135deg,#a855f7,#6d28d9)}
+.notification-avatar--green{background:linear-gradient(135deg,#22c55e,#15803d)}
+.notification-avatar--orange{background:linear-gradient(135deg,#f97316,#c2410c)}
+.notification-calendar{width:28px;height:28px;flex-shrink:0;background:var(--orange-light);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.notification-calendar-icon{color:var(--orange);font-size:14px}
+.notification-footer{padding:12px 16px;text-align:center;border-top:1px solid var(--border)}
+.mark-all-read{font-size:12px;color:var(--orange)}
+
+/* Styles extracted from topbar.html */
+.topbar-create-post{width:auto;padding:8px 14px;font-size:12px}
+.topbar-user-avatar{cursor:pointer}
+
+/* Styles extracted from sidebar.html */
+.sidebar-logo-image{width:100%;height:100%;object-fit:contain;display:block;}
+.sidebar-more-icon{color:var(--text3);margin-left:auto;font-size:16px}
+
+.upload-dropzone:hover{border-color:var(--orange)!important}
