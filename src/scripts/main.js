@@ -1,42 +1,62 @@
+// NEXO - ponto de entrada da aplicação
 
-function goToApp(){
-  document.getElementById('screen-login').classList.remove('active');
-  document.getElementById('screen-app').classList.add('active');
-}
+import { initializeApp, goToApp } from './core/app.js';
+import { showPage } from './core/router.js';
+import { closeAllModals, closeModal, openModal } from './components/modal.js';
+import { switchLoginTab, switchTab } from './components/tabs.js';
 
-function switchLoginTab(tab){
-  const tabs=document.querySelectorAll('.login-tab');
-  tabs.forEach((t,i)=>{t.classList.toggle('active',i===(tab==='login'?0:1))});
-  document.getElementById('login-panel').style.display=tab==='login'?'block':'none';
-  document.getElementById('register-panel').style.display=tab==='register'?'block':'none';
-}
-
-function showPage(page){
-  document.querySelectorAll('.page-panel').forEach(p=>p.classList.remove('active'));
-  const target=document.getElementById('page-'+page);
-  if(target){target.classList.add('active')}
-  document.querySelectorAll('.sidebar .nav-item').forEach(n=>n.classList.remove('active'));
-  document.querySelectorAll('.sidebar .nav-item').forEach(n=>{
-    const onclick = n.getAttribute('onclick')||'';
-    if(onclick.includes("'"+page+"'") || onclick.includes('"'+page+'"')){
-      n.classList.add('active');
+function bindGlobalEvents() {
+  document.addEventListener('click', event => {
+    const navigation = event.target.closest('[data-page]');
+    if (navigation) {
+      event.preventDefault();
+      showPage(navigation.dataset.page);
+      return;
     }
+
+    const modalOpen = event.target.closest('[data-modal-open]');
+    if (modalOpen) {
+      openModal(modalOpen.dataset.modalOpen);
+      return;
+    }
+
+    const modalClose = event.target.closest('[data-modal-close]');
+    if (modalClose) {
+      closeModal(modalClose.dataset.modalClose);
+      return;
+    }
+
+    const loginTab = event.target.closest('[data-login-tab]');
+    if (loginTab) {
+      switchLoginTab(loginTab.dataset.loginTab);
+      return;
+    }
+
+    const action = event.target.closest('[data-action]');
+    if (action?.dataset.action === 'go-to-app') {
+      goToApp();
+      return;
+    }
+
+    const tab = event.target.closest('[data-tab]');
+    if (tab) switchTab(tab);
+  });
+
+  document.addEventListener('click', event => {
+    const overlay = event.target.closest('.modal-overlay');
+    if (overlay && event.target === overlay) closeAllModals();
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeAllModals();
   });
 }
 
-function openModal(id){document.getElementById(id).classList.add('active')}
-function closeModal(id){document.getElementById(id).classList.remove('active')}
-
-function switchTab(el){
-  const siblings=el.parentElement.querySelectorAll('.tab');
-  siblings.forEach(s=>s.classList.remove('active'));
-  el.classList.add('active');
+async function init() {
+  bindGlobalEvents();
+  await initializeApp();
 }
 
-document.querySelectorAll('.modal-overlay').forEach(o=>{
-  o.addEventListener('click',function(e){if(e.target===this)this.classList.remove('active')});
-});
-
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'){document.querySelectorAll('.modal-overlay.active').forEach(m=>m.classList.remove('active'))}
+init().catch(error => {
+  console.error('[NEXO] Falha ao inicializar a aplicação:', error);
 });
