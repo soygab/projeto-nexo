@@ -32,7 +32,7 @@
 .modal{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);width:560px;max-width:100%;max-height:90vh;overflow-y:auto}
 .empty-state{display:flex;flex-direction:column;align-items:center;gap:12px;padding:48px 20px;color:var(--text3);text-align:center}
 .empty-state i{font-size:48px;opacity:0.4}
-to{opacity:1;transform:none}}
+to{opacity:1;transform:none}
 
 /* Styles extracted from modals.html */
 .post-tabs{margin-bottom:16px}
