@@ -1,0 +1,127 @@
+<div class="modal-overlay" id="modal-post">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="modal-title">Nova Publicação</span>
+            <button class="icon-btn" data-modal-close="modal-post"><i class="ti ti-x"></i></button>
+        </div>
+        
+        <div class="modal-body">
+            
+            <div class="tabs post-tabs">
+                <div class="tab active">Projeto</div>
+                <div class="tab">Dúvida</div>
+                <div class="tab">Artigo</div>
+                <div class="tab">Dica</div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Título do projeto</label>
+                <input class="form-input" placeholder="Ex: Sistema de monitoramento ambiental com IoT" type="text" />
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Descrição</label>
+                <textarea class="form-input post-description"
+                    placeholder="Descreva seu projeto, objetivos e tecnologias utilizadas..." rows="4"></textarea>
+            </div>
+            
+            <div class="grid-2 post-fields">
+                <div class="form-group post-field">
+                    <label class="form-label">Área</label>
+                    <select class="form-input">
+                        <option>Ciência da Computação</option>
+                        <option>Engenharia Elétrica</option>
+                        <option>Biologia</option>
+                        <option>Administração</option>
+                        <option>Design</option>
+                    </select>
+                </div>
+                <div class="form-group post-field">
+                    <label class="form-label">Status</label>
+                    <select class="form-input">
+                        <option>Em andamento</option>
+                        <option>Buscando colaboradores</option>
+                        <option>Concluído</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Tags (separadas por vírgula)</label>
+                <input class="form-input" placeholder="IoT, Python, Machine Learning, Sustentabilidade" type="text" />
+            </div>
+            
+            <div class="attachment-dropzone">
+                <i class="ti ti-upload attachment-icon"></i>
+                <div class="attachment-help">Arraste arquivos ou clique para anexar (PDF, imagens, código)</div>
+            </div>
+
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn btn-secondary" data-modal-close="modal-post">Cancelar</button>
+            <button class="btn btn-primary post-submit" data-modal-close="modal-post"><i class="ti ti-send"></i>
+                Publicar</button>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal-overlay" id="modal-notif">
+    <div class="modal notifications-modal">
+        
+        <div class="modal-header">
+            <span class="modal-title">Notificações</span>
+            <button class="icon-btn" data-modal-close="modal-notif"><i class="ti ti-x"></i></button>
+        </div>
+        
+        <div class="notification-list">
+            <div class="notif-item unread">
+                <div class="avatar notification-avatar notification-avatar--blue">ML</div>
+                <div>
+                    <div class="notif-text"><strong>Maria Lima</strong> comentou no seu projeto
+                        <strong>EcoSense</strong></div>
+                    <div class="notif-time">há 5 minutos</div>
+                </div>
+            </div>
+            
+            <div class="notif-item unread">
+                <div class="avatar notification-avatar notification-avatar--purple">PF</div>
+                <div>
+                    <div class="notif-text"><strong>Prof. Ferreira</strong> publicou um novo artigo sobre Inteligência
+                        Artificial</div>
+                    <div class="notif-time">há 23 minutos</div>
+                </div>
+            </div>
+            
+            <div class="notif-item">
+                <div class="avatar notification-avatar notification-avatar--green">JS</div>
+                <div>
+                    <div class="notif-text"><strong>João Silva</strong> enviou um convite para colaborar no projeto
+                        <strong>NutriApp</strong></div>
+                    <div class="notif-time">há 1 hora</div>
+                </div>
+            </div>
+            
+            <div class="notif-item">
+                <div class="avatar notification-avatar notification-avatar--orange">AN</div>
+                <div>
+                    <div class="notif-text">Você ganhou a badge <strong>Colaborador Frequente</strong></div>
+                    <div class="notif-time">há 2 horas</div>
+                </div>
+            </div>
+            
+            <div class="notif-item">
+                <div class="notification-calendar"><i class="ti ti-calendar notification-calendar-icon"></i></div>
+                <div>
+                    <div class="notif-text">Lembrete: Hackathon começa em <strong>2 dias</strong></div>
+                    <div class="notif-time">há 3 horas</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notification-footer">
+            <button class="btn btn-ghost mark-all-read">Marcar todas como lidas</button>
+        </div>
+    </div>
+</div>
