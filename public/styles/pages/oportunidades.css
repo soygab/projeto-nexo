@@ -1,0 +1,21 @@
+.opp-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px;margin-bottom:12px;display:flex;gap:14px;align-items:flex-start;cursor:pointer;transition:border-color .2s}
+.opp-card:hover{border-color:var(--orange)}
+.opp-icon{width:44px;height:44px;border-radius:var(--radius);background:var(--orange-light);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.opp-icon i{color:var(--orange);font-size:20px}
+.opp-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px}
+.opp-meta{font-size:11px;color:var(--text3)}
+.opp-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+
+.oportunidades-row-001{display:flex;gap:8px;margin-bottom:20px;overflow-x:auto}
+.oportunidades-element-002{flex:1;min-width:200px;position:relative}
+.oportunidades-icon-003{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:16px}
+.oportunidades-search-input{padding-left:34px}
+.oportunidades-element-005{flex:1}
+.oportunidades-header-row-006{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.oportunidades-description-007{font-size:12px;color:var(--text2);margin:6px 0}
+.oportunidades-action-008{width:auto;align-self:center}
+.oportunidades-element-009{background:rgba(59,130,246,0.1)}
+.oportunidades-icon-010{color:var(--blue)}
+.oportunidades-action-011{align-self:center}
+.oportunidades-element-012{background:rgba(34,197,94,0.1)}
+.oportunidades-icon-013{color:var(--green)}

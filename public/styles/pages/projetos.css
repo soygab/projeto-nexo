@@ -1,0 +1,54 @@
+.proj-page-header{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;margin-bottom:20px}
+.commit-item{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
+.commit-hash{font-family:var(--font-mono);font-size:11px;color:var(--blue);background:rgba(59,130,246,0.1);padding:2px 8px;border-radius:4px}
+.contrib-bar{display:flex;height:8px;border-radius:4px;overflow:hidden;gap:2px;margin:6px 0}
+.contrib-seg{height:100%;border-radius:2px;transition:flex .3s}
+
+.projetos-row-001{display:flex;align-items:flex-start;gap:16px}
+.projetos-highlight{width:56px;height:56px;border-radius:var(--radius-lg);background:var(--orange-light);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
+.projetos-element-003{flex:1}
+.projetos-row-004{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.projetos-meta-005{font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--text)}
+.projetos-description-006{font-size:13px;color:var(--text2);margin-bottom:12px}
+.projetos-row-007{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.projetos-row-008{display:flex;gap:8px;flex-shrink:0}
+.projetos-action-009{width:auto}
+.projetos-element-010{align-items:start;gap:20px}
+.projetos-description-011{font-size:13px;color:var(--text2);line-height:1.8;margin-bottom:16px}
+.projetos-progress-label{margin-bottom:12px}
+.projetos-progress-label-013{font-size:11px;color:var(--text3);margin-bottom:4px}
+.projetos-element-014{height:8px}
+.projetos-element-015{width:78%}
+.projetos-progress-label-016{font-size:11px;color:var(--text3);margin-top:4px;text-align:right}
+.projetos-row-017{display:flex;flex-wrap:wrap;gap:6px}
+.projetos-action-018{font-size:11px;color:var(--orange)}
+.projetos-element-019{padding:12px}
+.projetos-element-020{width:28px;height:28px;font-size:10px;flex-shrink:0}
+.projetos-element-021{font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px}
+.projetos-row-022{display:flex;align-items:center;gap:8px}
+.projetos-meta-023{font-size:10px;color:var(--text3)}
+.projetos-element-024{width:28px;height:28px;font-size:10px;flex-shrink:0;background:linear-gradient(135deg,#3b82f6,#1d4ed8)}
+.projetos-element-025{border:none}
+.projetos-element-026{width:28px;height:28px;font-size:10px;flex-shrink:0;background:linear-gradient(135deg,#22c55e,#15803d)}
+.projetos-row-027{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.projetos-element-028{text-align:center}
+.projetos-element-029{margin:0 auto 4px}
+.projetos-element-030{margin:0 auto 4px;background:linear-gradient(135deg,#3b82f6,#1d4ed8)}
+.projetos-element-031{margin:0 auto 4px;background:linear-gradient(135deg,#22c55e,#15803d)}
+.projetos-element-032{margin:0 auto 4px;background:linear-gradient(135deg,#a855f7,#6d28d9)}
+.projetos-secondary-action{width:40px;height:40px;border-radius:50%;background:var(--surface2);border:2px dashed var(--border);display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:11px;cursor:pointer}
+.projetos-element-034{font-size:11px;color:var(--text3);margin-bottom:6px}
+.projetos-element-035{flex:40;background:var(--orange)}
+.projetos-element-036{flex:25;background:var(--blue)}
+.projetos-element-037{flex:20;background:var(--green)}
+.projetos-element-038{flex:15;background:var(--purple)}
+.projetos-element-039{padding:14px;border-bottom:1px solid var(--border)}
+.projetos-row-040{display:flex;gap:10px;margin-bottom:8px}
+.projetos-element-041{width:28px;height:28px;font-size:10px;flex-shrink:0;background:linear-gradient(135deg,#a855f7,#6d28d9)}
+.projetos-element-042{font-size:12px;font-weight:600;color:var(--text)}
+.projetos-element-043{font-size:11px;color:var(--text3)}
+.projetos-description-044{font-size:12px;color:var(--text2);line-height:1.6}
+.projetos-element-045{padding:14px}
+.projetos-row-046{padding:14px;border-top:1px solid var(--border);display:flex;gap:10px}
+.projetos-action-047{background:var(--orange);border-color:var(--orange)}
+.projetos-icon-048{color:#fff;font-size:14px}
