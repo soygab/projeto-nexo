@@ -1,0 +1,30 @@
+:root{
+    --bg:#111827;
+    --bg2:#1a2332;
+    --bg3:#1f2d3d;
+    --surface:#1e2a3a;
+    --surface2:#243044;
+    --border:#2a3a4e;
+    --border2:#354a60;
+    --orange:#f97316;
+    --orange-dim:#c2410c;
+    --orange-glow:rgba(249,115,22,0.15);
+    --orange-light:rgba(249,115,22,0.08);
+    --white:#f5f5f4;
+    --gray:#78716c;
+    --gold:#a16207;
+    --text:#e2e8f0;
+    --text2:#94a3b8;
+    --text3:#64748b;
+    --green:#22c55e;
+    --blue:#3b82f6;
+    --purple:#a855f7;
+    --red:#ef4444;
+    --radius:8px;
+    --radius-lg:12px;
+    --radius-xl:16px;
+    --sidebar:240px;
+    --font-display:'Syne',sans-serif;
+    --font-body:'DM Sans',sans-serif;
+    --font-mono:'JetBrains Mono',monospace;
+}
