@@ -41,7 +41,7 @@ Calendário de hackathons, workshops, palestras e semanas acadêmicas, com desta
 ### Chat
 Comunicação direta entre estudantes para tirar dúvidas pontuais ou alinhar detalhes de colaboração em projetos.
 
-### 📱 Versão Mobile
+### Versão Mobile
 Acesso à plataforma também via aplicativo mobile, mantendo a comunidade conectada fora do desktop.
 
 ## Proposta de escalabilidade
