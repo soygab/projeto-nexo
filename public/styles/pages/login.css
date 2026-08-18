@@ -7,7 +7,7 @@
 .login-logo .logo-icon i{color:#fff;font-size:24px}
 .login-logo .logo-text{font-family:var(--font-display);font-size:24px;font-weight:800;letter-spacing:-0.5px}
 .login-logo .logo-text span{color:var(--orange)}
-.login-subtitle{text-align:center;color:var(--text2);font-size:13px;margin-bottom:32px}
+.login-subtitulo{text-align:center;color:var(--text2);font-size:13px;margin-bottom:32px}
 .login-tabs{display:flex;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:28px}
 .login-tab{flex:1;padding:10px;text-align:center;font-size:13px;font-weight:500;color:var(--text2);cursor:pointer;transition:all .2s}
 .login-tab.active{background:var(--orange);color:#fff}
@@ -20,7 +20,7 @@
 .register-panel{display:block}
 .login-panel.is-hidden,.register-panel.is-hidden{display:none!important}
 
-.login-domain{position:absolute;top:24px;left:24px;font-size:11px;color:var(--text3)}
+.login-dominio{position:absolute;top:24px;left:24px;font-size:11px;color:var(--text3)}
 .login-logo-image{width:100%;height:100%;object-fit:contain;display:block;}
 .login-name-grid{gap:12px;margin-bottom:0}
 .login-name-field{margin:0 0 12px 0}
