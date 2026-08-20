@@ -2,6 +2,7 @@
 
 import { loadComponent } from '../components.js';
 import { showPage } from './router.js';
+import { isAuthenticated } from './auth.js';
 
 export async function initializeApp() {
   await loadComponent('#screen-login', './src/pages/login.html');
@@ -9,6 +10,10 @@ export async function initializeApp() {
   await loadComponent('#topbar-container', './src/components/topbar.html');
   await loadComponent('#modals-container', './src/components/modals.html');
 
+  if (isAuthenticated()) {
+    document.getElementById('screen-login')?.classList.remove('active');
+    document.getElementById('screen-app')?.classList.add('active');
+  }
   await showPage('home');
 }
 

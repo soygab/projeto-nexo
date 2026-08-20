@@ -15,17 +15,14 @@
         <div class="login-tab" data-login-tab="register">Cadastrar</div>
     </div>
 <!-- Login -->
-    <div id="login-panel">
-        <div class="form-group">
-            <label class="form-label">E-mail</label>
-            <input class="form-input" placeholder="E-mail*" type="email" />
-        </div>
-        <div class="form-group">
-            <label class="form-label">Senha</label>
-            <input class="form-input" placeholder="••••••••" type="password" />
-        </div>
-        <button class="btn btn-primary" data-action="go-to-app"><i class="ti ti-arrow-right"></i> Entrar na
-            plataforma</button>
+<div id="login-panel">
+    <div class="form-group">
+        <label class="form-label">E-mail</label>
+        <input class="form-input" id="login-email" placeholder="E-mail*" type="email" />
+    </div>
+    <div class="form-group">
+        <label class="form-label">Senha</label>
+        <input class="form-input" id="login-senha" placeholder="••••••••" type="password" />
     </div>
 
 <!-- Registro -->
@@ -33,28 +30,28 @@
         
         <div class="grid-2 login-name-grid">
             <div class="form-group login-name-field"><label class="form-label">Nome</label>
-                <input class="form-input" placeholder="Seu nome" />
+                <input class="form-input" id="reg-nome" placeholder="Seu nome" />
             </div>
             
             <div class="form-group login-name-field"><label class="form-label">Sobrenome</label>
-                <input class="form-input" placeholder="Sobrenome" />
+                <input class="form-input" id="reg-sobrenome" placeholder="Sobrenome" />
             </div>
         </div>
 
         <div class="form-group"><label class="form-label">E-mail</label>
-            <input class="form-input" placeholder="E-mail*" type="email" />
+            <input class="form-input" id="reg-email" placeholder="E-mail*" type="email" />
         </div>
         
         <div class="form-group"><label class="form-label">Instituição</label>
-            <input class="form-input" placeholder="Ex: UNIFEI, USP, UFMG..." />
+            <input class="form-input" id="reg-instituicao" placeholder="Ex: UNIFEI, USP, UFMG..." />
         </div>
         
         <div class="form-group"><label class="form-label">Curso</label>
-            <input class="form-input" placeholder="Ex: Ciência da Computação" />
+            <input class="form-input" id="reg-curso" placeholder="Ex: Ciência da Computação" />
         </div>
         
         <div class="form-group"><label class="form-label">Senha</label>
-            <input class="form-input" placeholder="Mínimo 8 caracteres" type="password" />
+            <input class="form-input" id="reg-senha" placeholder="Mínimo 8 caracteres" type="password" />
         </div>
 
         <button class="btn btn-primary" data-action="go-to-app"><i class="ti ti-user-plus"></i> Criar conta NEXO</button>
