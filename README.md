@@ -54,7 +54,28 @@ Este projeto foi idealizado e desenvolvido durante o **1º Hackathon da UGB**, c
 
 ## Status
 
-Organização e estrutura do código, dando funcionalidade e implementando novas tecnologias.
+Front-end estruturado e navegável. Backend em desenvolvimento com Django + Django REST Framework: autenticação de usuários (cadastro e login) já implementada e funcional, com tokens JWT, validação de e-mail real e exibição dos dados do usuário logado na interface. Próximas etapas: endpoints protegidos para projetos, feed, chat e demais funcionalidades do hub.
+
+## Backend
+
+O backend é uma API REST separada do front (`backend/`), construída com **Django** + **Django REST Framework**, autenticado via **JWT** (`djangorestframework-simplejwt`) e liberado para o front consumir via `fetch()` com **CORS** (`django-cors-headers`).
+
+**Implementado até agora:**
+- Modelo de usuário customizado (`accounts/models.py`), estendendo o `AbstractUser` do Django com os campos `instituicao` e `curso`, e login por **e-mail** (`USERNAME_FIELD = 'email'`) em vez de username.
+- Cadastro (`POST /api/auth/register/`) e login (`POST /api/auth/login/`), retornando tokens `access`/`refresh` e os dados do usuário.
+- Validação de e-mail: além do formato, o domínio é verificado via consulta DNS (registro MX), rejeitando e-mails com domínios inexistentes.
+- Sessão persistente no front via `localStorage`, com botão de logout.
+- Exibição dinâmica do usuário logado (nome, iniciais, instituição/curso) na sidebar, topbar e página de perfil.
+
+**Estrutura do backend:**
+- `backend/manage.py`: utilitário de linha de comando do Django.
+- `backend/backend/settings.py`: configurações do projeto (apps instalados, CORS, JWT, banco de dados).
+- `backend/accounts/models.py`: modelo de usuário customizado.
+- `backend/accounts/serializers.py`: validação e serialização dos dados de cadastro.
+- `backend/accounts/validators.py`: validador customizado de domínio de e-mail (checagem de MX).
+- `backend/accounts/views.py`: endpoints de cadastro e login.
+- `backend/accounts/urls.py`: rotas da API de autenticação.
+- `backend/accounts/admin.py`: configuração do usuário customizado no Django Admin.
 
 ## Estrutura
 
@@ -66,7 +87,8 @@ Organização e estrutura do código, dando funcionalidade e implementando novas
 - `public/styles/pages/`: estilos específicos de cada página.
 - `src/components/`: componentes HTML compartilhados.
 - `src/pages/`: páginas carregadas dinamicamente.
-- `src/scripts/core/`: inicialização e roteamento.
+- `src/scripts/core/`: inicialização, roteamento, autenticação (`auth.js`) e dados do usuário logado (`profile.js`).
 - `src/scripts/components/`: comportamentos reutilizáveis de componentes.
 - `src/scripts/`: ponto de entrada e carregador de componentes.
 - `backup/nexo.html`: versão original preservada.
+- `backend/`: API REST em Django, responsável pela autenticação e (futuramente) pelos dados da plataforma.
