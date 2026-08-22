@@ -17,6 +17,13 @@ def register_view(request):
         return Response({
             'access': str(refresh.access_token),
             'refresh': str(refresh),
+            'user': {
+                'first_name': user.first_name,
+                'last_name': user.last_name,
+                'email': user.email,
+                'instituicao': user.instituicao,
+                'curso': user.curso,
+            },
         }, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -48,5 +55,7 @@ def login_view(request):
             'first_name': user.first_name,
             'last_name': user.last_name,
             'email': user.email,
+            'instituicao': user.instituicao,
+            'curso': user.curso,
         },
     }, status=status.HTTP_200_OK)

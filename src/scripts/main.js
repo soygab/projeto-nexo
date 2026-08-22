@@ -5,6 +5,7 @@ import { logout } from './core/auth.js';
 import { showPage } from './core/router.js';
 import { closeAllModals, closeModal, openModal } from './components/modal.js';
 import { switchLoginTab, switchTab } from './components/tabs.js';
+import { renderUserData } from './core/profile.js';
 
 function bindGlobalEvents() {
   document.addEventListener('click', event => {
@@ -80,6 +81,7 @@ async function handleAuthSubmit(button) {
         document.getElementById('login-senha').value
       );
     }
+    renderUserData();
     goToApp();
   } catch (error) {
     alert(error.message); // troque por um elemento visual de erro depois

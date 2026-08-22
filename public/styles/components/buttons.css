@@ -6,3 +6,6 @@
 .btn-ghost{background:transparent;color:var(--text2)}
 .btn-ghost:hover{color:var(--text);background:var(--surface2)}
 .btn-danger{background:rgba(239,68,68,0.1);color:var(--red);border-color:rgba(239,68,68,0.2)}
+.logout-btn{background:var(--orange);color:#fff;width:100%;justify-content:center;margin-top:8px}
+.logout-btn:hover{background:#ea6b0f}
+.logout-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:var(--radius);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;border:1px solid transparent}

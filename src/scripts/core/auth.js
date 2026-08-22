@@ -10,6 +10,9 @@ export async function login(email, senha) {
   const data = await response.json();
   localStorage.setItem('nexo_access_token', data.access);
   localStorage.setItem('nexo_refresh_token', data.refresh);
+  if (data.user) {
+    localStorage.setItem('nexo_user', JSON.stringify(data.user));
+  }
   return data;
 }
 
@@ -23,7 +26,13 @@ export async function register(dados) {
   const data = await response.json();
   localStorage.setItem('nexo_access_token', data.access);
   localStorage.setItem('nexo_refresh_token', data.refresh);
+  localStorage.setItem('nexo_user', JSON.stringify(data.user));
   return data;
+}
+
+export function getCurrentUser() {
+  const raw = localStorage.getItem('nexo_user');
+  return raw ? JSON.parse(raw) : null;
 }
 
 export function isAuthenticated() {
@@ -33,4 +42,5 @@ export function isAuthenticated() {
 export function logout() {
   localStorage.removeItem('nexo_access_token');
   localStorage.removeItem('nexo_refresh_token');
+  localStorage.removeItem('nexo_user');
 }
