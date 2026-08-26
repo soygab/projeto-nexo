@@ -41,9 +41,6 @@ Calendário de hackathons, workshops, palestras e semanas acadêmicas, com desta
 ### Chat
 Comunicação direta entre estudantes para tirar dúvidas pontuais ou alinhar detalhes de colaboração em projetos.
 
-### Versão Mobile
-Acesso à plataforma também via aplicativo mobile, mantendo a comunidade conectada fora do desktop.
-
 ## Proposta de escalabilidade
 
 O Nexo foi pensado para não ficar restrito a uma única instituição. A ideia é que a plataforma possa ser adotada por diferentes faculdades, criando redes de colaboração acadêmica que aproveitem ao máximo o conhecimento disponível dentro (e, futuramente, entre) as instituições.
