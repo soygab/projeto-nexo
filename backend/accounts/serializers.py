@@ -2,31 +2,36 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.password_validation import validate_password
 from rest_framework import serializers
 from .validators import validate_real_email_domain
-
 User = get_user_model()
 
-class RegisterSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(write_only=True, validators=[validate_password])
-    email = serializers.EmailField(validators=[validate_real_email_domain])
+class ProfileSerializer(serializers.ModelSerializer):
+    activity = serializers.SerializerMethodField()
+
+    def get_activity(self, user):
+        # No activity models exist yet: never attribute demo records to users.
+        return {'projects': [], 'contributions': [], 'badges': [],
+                'followers_count': 0, 'following_count': 0}
 
     class Meta:
         model = User
+        fields = ['id', 'first_name', 'last_name', 'email', 'instituicao', 'curso', 'bio', 'interests', 'email_verified', 'activity']
+        read_only_fields = ['id', 'email', 'email_verified']
+        extra_kwargs = {'first_name': {'required': True, 'allow_blank': False}}
+
+class RegisterSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True, trim_whitespace=False)
+    email = serializers.EmailField(validators=[validate_real_email_domain])
+    class Meta:
+        model = User
         fields = ['first_name', 'last_name', 'email', 'instituicao', 'curso', 'password']
-
+        extra_kwargs = {'first_name': {'required': True, 'allow_blank': False}}
     def validate_email(self, value):
-        if User.objects.filter(email=value).exists():
-            raise serializers.ValidationError('Este e-mail já está cadastrado.')
+        value = value.strip().lower()
+        if User.objects.filter(email__iexact=value).exists():
+            raise serializers.ValidationError('Este e-mail já está cadastrado. Entre ou solicite outro link.')
         return value
-
+    def validate(self, attrs):
+        validate_password(attrs['password'], User(**{k: v for k, v in attrs.items() if k != 'password'}))
+        return attrs
     def create(self, validated_data):
-        user = User(
-            username=validated_data['email'],  # e-mail como username
-            first_name=validated_data['first_name'],
-            last_name=validated_data['last_name'],
-            email=validated_data['email'],
-            instituicao=validated_data['instituicao'],
-            curso=validated_data['curso'],
-        )
-        user.set_password(validated_data['password'])  # nunca salvar senha em texto puro
-        user.save()
-        return user
+        return User.objects.create_user(username=validated_data['email'], **validated_data)

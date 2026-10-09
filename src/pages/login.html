@@ -14,6 +14,7 @@
         <div class="login-tab active" data-login-tab="login">Entrar</div>
         <div class="login-tab" data-login-tab="register">Cadastrar</div>
     </div>
+    <div class="login-message is-hidden" id="login-message" role="alert" aria-live="polite"></div>
 <!-- Login -->
 <div id="login-panel">
     <div class="form-group">
@@ -26,6 +27,7 @@
     </div>
     <button class="btn btn-primary" data-action="go-to-app"><i class="ti ti-arrow-right"></i> Entrar na
             plataforma</button>
+    <button type="button" class="btn btn-secondary login-resend" data-action="resend-verification"><i class="ti ti-mail" aria-hidden="true"></i> Reenviar confirmação de e-mail</button>
 </div>
 
 <!-- Registro -->
@@ -42,7 +44,8 @@
         </div>
 
         <div class="form-group"><label class="form-label">E-mail</label>
-            <input class="form-input" id="reg-email" placeholder="E-mail*" type="email" />
+            <input class="form-input" id="reg-email" placeholder="seuemail@gmail.com" type="email" />
+            <small class="login-email-hint">A conta será ativada pelo link enviado ao Gmail.</small>
         </div>
         
         <div class="form-group"><label class="form-label">Instituição</label>

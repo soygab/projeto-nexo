@@ -14,10 +14,36 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from pathlib import Path
+
 from django.contrib import admin
-from django.urls import path, include
+from django.http import FileResponse
+from django.urls import include, path, re_path
+from django.views.static import serve
+
+
+FRONTEND_ROOT = Path(__file__).resolve().parents[2]
+
+
+def frontend(request):
+    """Serve the application's entry point from the project root."""
+    response = FileResponse(FRONTEND_ROOT.joinpath('index.html').open('rb'))
+    response['Cache-Control'] = 'no-store, no-cache, must-revalidate'
+    return response
+
+
+def frontend_asset(request, path, directory):
+    """Serve development assets without leaving stale UI files in the browser."""
+    response = serve(request, path, document_root=FRONTEND_ROOT / directory)
+    response['Cache-Control'] = 'no-store, no-cache, must-revalidate'
+    return response
 
 urlpatterns = [
+    path('', frontend, name='frontend'),
     path('admin/', admin.site.urls),
     path('api/auth/', include('accounts.urls')),
+    # The front-end is intentionally kept outside Django's static/ directory.
+    # These routes make it available when the project is run with runserver.
+    re_path(r'^public/(?P<path>.*)$', frontend_asset, {'directory': 'public'}),
+    re_path(r'^src/(?P<path>.*)$', frontend_asset, {'directory': 'src'}),
 ]

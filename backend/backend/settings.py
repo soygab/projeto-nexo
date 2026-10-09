@@ -10,7 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
+import os
 from pathlib import Path
+from urllib.parse import urlparse
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +27,12 @@ SECRET_KEY = 'django-insecure-yx*7^v(82i75+q&4@bowkd@$=jho_1u@4d&-f)@p3e=(c9+y_q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+NEXO_PUBLIC_URL = os.environ.get('NEXO_PUBLIC_URL', '').rstrip('/')
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+if NEXO_PUBLIC_URL:
+    public_hostname = urlparse(NEXO_PUBLIC_URL).hostname
+    if public_hostname:
+        ALLOWED_HOSTS.append(public_hostname)
 
 
 # Application definition
@@ -56,7 +63,9 @@ MIDDLEWARE = [
 
 AUTH_USER_MODEL = 'accounts.User'
 CORS_ALLOWED_ORIGINS = ["http://localhost:5500",
-                        "http://127.0.0.1:5500",]
+                        "http://127.0.0.1:5500",
+                        "http://localhost:8000",
+                        "http://127.0.0.1:8000",]
 ROOT_URLCONF = 'backend.urls'
 
 TEMPLATES = [
@@ -125,11 +134,13 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 
-# Email
-# https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
-
-MAILERS = {
-    'default': {
-        'BACKEND': 'django.core.mail.backends.console.EmailBackend',
-    },
-}
+# Gmail SMTP. Generate an app password at myaccount.google.com/apppasswords
+# and provide both values as environment variables before starting Django.
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('NEXO_GMAIL_USER', '')
+EMAIL_HOST_PASSWORD = os.environ.get('NEXO_GMAIL_APP_PASSWORD', '').replace(' ', '')
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_TIMEOUT = 15

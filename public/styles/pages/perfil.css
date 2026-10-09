@@ -33,3 +33,14 @@
 .perfil-element-024{background:rgba(59,130,246,0.1)}
 .perfil-element-025{background:rgba(34,197,94,0.1)}
 .perfil-locked{opacity:0.4}
+.profile-empty{padding:28px 20px;color:var(--text2);font-size:13px;text-align:center;line-height:1.6}
+[data-profile-tab]{background:transparent;border:0;font:inherit;color:var(--text2)}
+.profile-editor{padding:24px}
+.profile-editor>p{color:var(--text2);margin:12px 0 24px}
+.profile-editor .form-group{display:block;margin-bottom:16px}
+.profile-editor .form-input{margin-top:8px}
+.profile-editor-actions{display:flex;justify-content:flex-end;gap:12px;flex-wrap:wrap;margin-top:16px}
+.profile-editor-actions .btn-primary{width:auto;margin-top:0}
+#profile-interests{font-size:13px;color:var(--text2);overflow-wrap:anywhere}
+#profile-save-status{color:var(--green);font-size:13px;margin-top:12px}
+.perfil-profile-name,.perfil-row-007,.perfil-description-010{overflow-wrap:anywhere}

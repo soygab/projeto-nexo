@@ -2,7 +2,7 @@
 
 import { loadComponent } from '../components.js';
 import { showPage } from './router.js';
-import { isAuthenticated } from './auth.js';
+import { restoreSession } from './auth.js';
 import { renderUserData } from './profile.js';
 
 export async function initializeApp() {
@@ -11,7 +11,7 @@ export async function initializeApp() {
   await loadComponent('#topbar-container', './src/components/topbar.html');
   await loadComponent('#modals-container', './src/components/modals.html');
 
-  if (isAuthenticated()) {
+  if (await restoreSession()) {
     renderUserData();
     document.getElementById('screen-login')?.classList.remove('active');
     document.getElementById('screen-app')?.classList.add('active');

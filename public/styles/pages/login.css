@@ -11,6 +11,14 @@
 .login-tabs{display:flex;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:28px}
 .login-tab{flex:1;padding:10px;text-align:center;font-size:13px;font-weight:500;color:var(--text2);cursor:pointer;transition:all .2s}
 .login-tab.active{background:var(--orange);color:#fff}
+.login-message{display:flex;align-items:flex-start;gap:9px;margin:-12px 0 20px;padding:11px 13px;border:1px solid rgba(239,68,68,.38);border-radius:var(--radius);background:rgba(239,68,68,.1);color:#fca5a5;font-size:12px;line-height:1.45;animation:fadeIn .2s ease}
+.login-message::before{content:"!";display:grid;place-items:center;flex:0 0 18px;width:18px;height:18px;border-radius:50%;background:#ef4444;color:#fff;font-size:11px;font-weight:700}
+.login-message.is-success{border-color:rgba(34,197,94,.38);background:rgba(34,197,94,.1);color:#86efac}
+.login-message.is-success::before{content:"\2713";background:#22c55e}
+.login-card .btn:disabled{cursor:wait;opacity:.7}
+.login-resend{width:100%;justify-content:center;margin-top:12px;font-size:12px;white-space:normal}
+.login-resend:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.login-email-hint{display:block;margin-top:6px;color:var(--text3);font-size:11px;line-height:1.4}
 .login-divider{text-align:center;color:var(--text3);font-size:12px;margin:20px 0;position:relative}
 .login-divider::before,.login-divider::after{content:"";position:absolute;top:50%;width:40%;height:1px;background:var(--border)}
 .login-divider::before{left:0}

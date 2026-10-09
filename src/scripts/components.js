@@ -2,7 +2,7 @@
 export async function loadComponent(selector, url) {
   const target = document.querySelector(selector);
   if (!target) return null;
-  const response = await fetch(url);
+  const response = await fetch(url, { cache: 'no-store' });
   if (!response.ok) throw new Error(`Falha ao carregar ${url}: ${response.status}`);
   target.innerHTML = await response.text();
   return target;

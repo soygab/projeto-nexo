@@ -1,4 +1,5 @@
 // NEXO - navegação entre páginas
+import { renderUserData } from './profile.js';
 
 const ROUTES = {
   home: 'dashboard',
@@ -23,10 +24,11 @@ export async function loadPage(page) {
   target.classList.add('is-loading');
 
   try {
-    const response = await fetch(`./src/pages/${file}.html`);
+    const response = await fetch(`./src/pages/${file}.html`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`Página não encontrada: ${file}`);
 
     target.innerHTML = await response.text();
+    renderUserData();
     updateActiveNavigation(page);
     return true;
   } finally {

@@ -1,5 +1,15 @@
 # Nexo
 
+## Fluxo de contas e perfil (atualização)
+
+Instale as dependências de `requirements.txt` e execute `python backend/manage.py migrate` antes de iniciar o servidor. Execute `python backend/manage.py test accounts` para validar o fluxo com e-mails em memória.
+
+Novas contas precisam confirmar o Gmail antes do login. O botão de reenvio usa o e-mail e a senha preenchidos no login e não altera os dados da conta. Cada novo link invalida o anterior; os links expiram após 24 horas e só podem ser usados uma vez. Links da versão anterior devem ser substituídos pelo reenvio.
+
+A migração preserva o acesso das contas já ativas. Contas antigas inativas continuam bloqueadas: o administrador deve revisar se eram cadastros pendentes ou bloqueios intencionais antes de habilitá-las. Confirmação de e-mail e bloqueio administrativo agora são estados separados.
+
+O perfil permite editar nome, sobrenome, instituição, curso, biografia e interesses. As alterações são persistidas em `GET/PATCH /api/auth/me/` com JWT; e-mail e privilégios não são editáveis por esse endpoint. Ao abrir a aplicação, a sessão é consultada no servidor e o token pode ser renovado.
+
 > Projeto desenvolvido para o **1º Hackathon da UGB** (Centro Universitário UGB)
 
 ## Sobre o projeto
@@ -63,6 +73,22 @@ O backend é uma API REST separada do front (`backend/`), construída com **Djan
 - Validação de e-mail: além do formato, o domínio é verificado via consulta DNS (registro MX), rejeitando e-mails com domínios inexistentes.
 - Sessão persistente no front via `localStorage`, com botão de logout.
 - Exibição dinâmica do usuário logado (nome, iniciais, instituição/curso) na sidebar, topbar e página de perfil.
+- Cadastro restrito a endereços `@gmail.com`, com ativação da conta por link enviado ao e-mail.
+
+### Configurar o envio de confirmação pelo Gmail
+
+Ative a verificação em duas etapas na conta remetente e gere uma senha de app do Gmail. Antes de iniciar o Django no PowerShell, defina:
+
+```powershell
+$env:NEXO_GMAIL_USER="seu-remetente@gmail.com"
+$env:NEXO_GMAIL_APP_PASSWORD="senha-de-app-do-gmail"
+$env:NEXO_PUBLIC_URL="http://192.168.29.9:8000"
+python backend/manage.py runserver 0.0.0.0:8000
+```
+
+A senha de app deve permanecer somente no ambiente local e nunca ser adicionada ao repositório.
+
+`NEXO_PUBLIC_URL` deve apontar para o endereço pelo qual o destinatário consegue acessar o NEXO. Em testes na mesma rede Wi-Fi, use o IPv4 do computador. Em produção, use o domínio HTTPS publicado.
 
 **Estrutura do backend:**
 - `backend/manage.py`: utilitário de linha de comando do Django.
