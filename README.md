@@ -1,15 +1,5 @@
 # Nexo
 
-## Fluxo de contas e perfil (atualização)
-
-Instale as dependências de `requirements.txt` e execute `python backend/manage.py migrate` antes de iniciar o servidor. Execute `python backend/manage.py test accounts` para validar o fluxo com e-mails em memória.
-
-Novas contas precisam confirmar o Gmail antes do login. O botão de reenvio usa o e-mail e a senha preenchidos no login e não altera os dados da conta. Cada novo link invalida o anterior; os links expiram após 24 horas e só podem ser usados uma vez. Links da versão anterior devem ser substituídos pelo reenvio.
-
-A migração preserva o acesso das contas já ativas. Contas antigas inativas continuam bloqueadas: o administrador deve revisar se eram cadastros pendentes ou bloqueios intencionais antes de habilitá-las. Confirmação de e-mail e bloqueio administrativo agora são estados separados.
-
-O perfil permite editar nome, sobrenome, instituição, curso, biografia e interesses. As alterações são persistidas em `GET/PATCH /api/auth/me/` com JWT; e-mail e privilégios não são editáveis por esse endpoint. Ao abrir a aplicação, a sessão é consultada no servidor e o token pode ser renovado.
-
 > Projeto desenvolvido para o **1º Hackathon da UGB** (Centro Universitário UGB)
 
 ## Sobre o projeto
